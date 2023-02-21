@@ -10,14 +10,20 @@ import CreateCategory from "../../screens/categories/create";
 
 const PrivateRoutes = () => {
   return (
-    <Navigation>
+   
       <Routes>
         <Route path={PrivateConstantsRoutes.WELCOME} element={<Welcome />} />
-        <Route path={PrivateConstantsRoutes.CATEGORIES} element={<Categories />} />
-        <Route path={PrivateConstantsRoutes.CREATE_CATEGORY} element={<CreateCategory />} />
+        <Route
+          path={PrivateConstantsRoutes.CATEGORIES}
+          element={<Categories />}
+        />
+        <Route
+          path={PrivateConstantsRoutes.CREATE_CATEGORY}
+          element={<CreateCategory />}
+        />
         <Route path={PrivateConstantsRoutes.EXPENSES} element={<Expenses />} />
       </Routes>
-    </Navigation>
+ 
   );
 };
 

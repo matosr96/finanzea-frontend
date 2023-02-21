@@ -28,11 +28,23 @@ const Signin = () => {
           <div className={styles.container_inputs_signin}>
             <div className={styles.formGroup}>
               <label htmlFor="email">Correo electronico</label>
-              <input type="email" name="email" id="email" className={styles.input} required />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className={styles.input}
+                required
+              />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="password">Contraseña</label>
-              <input type="password" name="password" id="password" className={styles.input} required />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                className={styles.input}
+                required
+              />
             </div>
             <div className={styles.formGroup}>
               <button type="submit">Iniciar Sesión</button>
@@ -58,9 +70,6 @@ const Signin = () => {
         <div className={styles.line}></div>
         <div className={styles.btnGroup}>
           <SigninGoogle />
-          <button type="button" className={styles.Button}>
-            <i className="fab fa-facebook"></i> Ingresar con Facebook
-          </button>
         </div>
         <p className={styles.signup_link}>
           Aun no tienes una cuenta,{" "}

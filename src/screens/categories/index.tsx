@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Navigation from "../../components/navigation";
 import SearchBox from "../../components/searchbox";
 import { categoryListThunks } from "../../redux/states/category/thunks";
 import { AppStore } from "../../redux/store";
@@ -34,7 +35,7 @@ const Categories = () => {
     dispatch(categoryListThunks() as any);
   }, [dispatch, success]);
   return (
-    <>
+    <Navigation>
       <div className={styles.container_categories}>
         <div className={styles.header_category}>
           <h2>Lista de Categorias</h2>
@@ -87,7 +88,7 @@ const Categories = () => {
         setOpenModal={setOPU}
         categoryData={categorySelected}
       />
-    </>
+    </Navigation>
   );
 };
 

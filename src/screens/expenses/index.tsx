@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navigation from "../../components/navigation";
 import SearchBox from "../../components/searchbox";
 import TimeAgo from "../../components/Timeago";
 import { DivisaFormater } from "../../utils/DivisaFormater";
@@ -9,7 +10,7 @@ import styles from "./Expense.module.css";
 const Expenses = () => {
   const [openModal, setOpenModal] = useState(false);
   return (
-    <>
+    <Navigation>
       <div className={styles.container_categories}>
         <div className={styles.header_category}>
           <h2>Lista de Gastos</h2>
@@ -51,7 +52,7 @@ const Expenses = () => {
         </div>
       </div>
       <CreateExpense openModal={openModal} setOpenModal={setOpenModal} />
-    </>
+    </Navigation>
   );
 };
 
