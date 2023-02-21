@@ -35,9 +35,9 @@ export const signinUser = createAsyncThunk(
 
 export const signupUser = createAsyncThunk(
   "/signup",
-  async (admin: PartialUser, thunkAPI) => {
+  async (user: PartialUser, thunkAPI) => {
     try {
-      return await signupUserThunks(admin);
+      return await signupUserThunks(user);
     } catch (err: any) {
       const message = err;
       return thunkAPI.rejectWithValue(message.response.data.message);

@@ -37,7 +37,7 @@ const Signup = () => {
   return (
     <div className={styles.container_signin}>
       <div className={styles.container_form}>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={submitRegisterHandler}>
           <div className={styles.header_signin}>
             <h2 className={styles.title_signin}>Registrarse</h2>
           </div>
