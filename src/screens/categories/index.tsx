@@ -17,7 +17,14 @@ const Categories = () => {
     success,
     loading,
   } = useSelector((state: AppStore) => state.categories);
+  const user = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user") || "")
+    : "";
   const { items } = categories;
+
+  const Categorylist = items?.filter((category: Category) => {
+    return category.user_email === user.email;
+  });
 
   const [categorySelected, setCS] = useState<Category>({
     uuid: "",
@@ -59,7 +66,7 @@ const Categories = () => {
               </tr>
             </thead>
             <tbody>
-              {items?.map((category: Category) => (
+              {Categorylist?.map((category: Category) => (
                 <tr key={category.uuid}>
                   <td>{category.name}</td>
                   <td>{category.user_email}</td>

@@ -1,17 +1,20 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { signupUser } from "../../redux/states/user/slice";
+import { AppStore } from "../../redux/store";
 import { PartialUser } from "../../types/user";
 import styles from "./Signup.module.css";
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { successSignup } = useSelector((state: AppStore) => state.user);
   const [user, setUser] = useState<PartialUser>({
     name: "",
     lastname: "",
     email: "",
-    password: ""
+    password: "",
   });
 
   const handleChange = (
@@ -23,7 +26,7 @@ const Signup = () => {
     setUser((prev) => ({ ...prev, [name]: value }));
   };
 
-  const submitRegisterHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+  const submitRegisterHandler = async (e: any) => {
     e.preventDefault();
     try {
       dispatch(signupUser(user) as any);
@@ -33,6 +36,12 @@ const Signup = () => {
       }
     }
   };
+
+  useEffect(() => {
+    if (successSignup) {
+      navigate("/categories", { replace: true });
+    }
+  }, [user, successSignup, navigate]);
 
   return (
     <div className={styles.container_signin}>
@@ -69,6 +78,8 @@ const Signup = () => {
               <input
                 type="email"
                 name="email"
+                value={user.email}
+                onChange={handleChange}
                 id="email"
                 className={styles.input}
                 required
@@ -85,9 +96,7 @@ const Signup = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <button type="submit" className={styles.Button}>
-                Acceder
-              </button>
+              <button className={styles.Button}>Registrarse</button>
             </div>
           </div>
         </form>

@@ -1,6 +1,5 @@
+import { VITE_API } from "../../../api";
 import { PartialUser } from "../../../types/user";
-
-const { VITE_API } = import.meta.env;
 
 export const signinUserThunks = async (email: string, password: string) => {
   const { data } = await VITE_API.post("/signin", { email, password });
