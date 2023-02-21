@@ -94,7 +94,7 @@ const Signup = () => {
 
         <p className={styles.signup_link}>
           ya tienes una cuenta,{" "}
-          <Link to={"/signup"}>
+          <Link to={"/"}>
             <strong>Inicia sesion</strong>{" "}
           </Link>{" "}
         </p>
