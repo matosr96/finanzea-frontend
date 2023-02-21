@@ -1,0 +1,111 @@
+.table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+}
+
+.thead {
+  text-align: center;
+}
+
+.thead th {
+  padding: 1rem 0.5rem;
+  font-size: 1.4rem;
+  color: var(--black);
+  font-weight: 600;
+  text-align: left;
+}
+
+tbody {
+  text-align: left;
+}
+
+tbody td {
+  text-align: left;
+  padding: 1rem 0.7rem;
+  font-weight: 400;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--bg-dark);
+}
+
+.container_categories {
+  height: 100%;
+}
+
+.header_category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.group_header_category {
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn_add_category {
+  padding: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: var(--black);
+  color: var(--white-total);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.body_categories {
+  display: flex;
+}
+
+.form_create_category {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.list_categories {
+  background-color: red;
+  padding: 2rem;
+}
+
+.form {
+  background-color: var(--white-total);
+  padding: 3rem;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-width: 35rem;
+}
+
+.container_actions_icons{
+  display: flex;
+  gap: 1rem;
+}
+
+.icons_edit{
+  background-color: var(--white-total);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: .4rem;
+  
+}
+
+.icons_trash{
+  background-color: var(--black);
+  border: none;
+  padding: 1rem;
+  border-radius: .4rem;
+  color: var(--white-total);
+
+}
