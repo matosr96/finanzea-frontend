@@ -47,7 +47,7 @@ const Signin = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <button type="submit">Iniciar Sesión</button>
+              <button type="submit" className={styles.Button} >Acceder</button>
             </div>
             <div className={styles.signin_options}>
               <label>

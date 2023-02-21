@@ -111,6 +111,10 @@
 .nav_link {
   color: var(--white-total);
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 19rem);
 }
 
 .link {
@@ -123,6 +127,7 @@
   padding: 1rem;
   display: flex;
   align-items: center;
+  border: none;
 }
 
 .link:hover {

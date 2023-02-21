@@ -1,0 +1,122 @@
+.container_signin {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container_form {
+    background: var(--white-total);
+    padding: 3rem;
+    width: 50rem;
+    border-radius: 0.4rem;
+  }
+  
+  .form {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  
+  .form .field {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+  }
+  
+  .header_signin {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .container_inputs_signin {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .signup_link {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .btnGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .line {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
+  }
+  .line::before {
+    content: "O";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #8b8b8b;
+    padding: 0 15px;
+  }
+  
+  .signin_options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .signin_options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .signin_options {
+    font-size: 1.3rem;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+  }
+  
+  .input {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+  }
+  
+  .Button {
+    background-color: var(--blue);
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+  }
+  
+  .Button:hover {
+    background-color: var(--main-color);
+  }
+  
+  @media screen and (max-width: 400px) {
+    .container_signin {
+      background-color: var(--white-total);
+    }
+  }
+  
