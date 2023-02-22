@@ -1,27 +1,51 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Signin.module.css";
 import SigninGoogle from "./google-login";
+import { PartialUser, SigninProps } from "../../types/user";
+import { useDispatch, useSelector } from "react-redux";
+import { signinUser } from "../../redux/states/user/slice";
+import { AppStore } from "../../redux/store";
 
 const Signin = () => {
-  const remenberInfo = localStorage.getItem("remenberInfo")
-    ? JSON.parse(localStorage.getItem("remenberInfo") || "")
-    : "";
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { success } = useSelector((state: AppStore) => state.user);
+  const [user, setUser] = useState<SigninProps>({
+    email: "",
+    password: "",
+  });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // onSubmit(username, password);
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setUser((prev) => ({ ...prev, [name]: value }));
   };
 
-  const [remenber, setRemenber] = useState(
-    remenberInfo ? remenberInfo.remenber : false
-  );
+  const submitSigninHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      dispatch(signinUser(user) as any);
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log(error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (success) {
+      navigate("/categories", { replace: true });
+    }
+  }, [user, success, navigate, dispatch]);
+
   return (
     <div className={styles.container_signin}>
       <div className={styles.container_form}>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={submitSigninHandler}>
           <div className={styles.header_signin}>
             <h2 className={styles.title_signin}>Iniciar Sesión</h2>
           </div>
@@ -47,18 +71,13 @@ const Signin = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <button type="submit" className={styles.Button} >Acceder</button>
+              <button type="submit" className={styles.Button}>
+                Acceder
+              </button>
             </div>
             <div className={styles.signin_options}>
               <label>
-                <input
-                  type="checkbox"
-                  name=""
-                  id=""
-                  className={styles.input}
-                  checked={remenber}
-                  onChange={({ target }) => setRemenber(target.checked)}
-                />
+                <input type="checkbox" name="" id="" className={styles.input} />
                 Recuerdame
               </label>
               <Link to="/forgot-password-admin">

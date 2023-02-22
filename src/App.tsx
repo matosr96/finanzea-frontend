@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
 import Navigation from "./components/navigation";
 import PrivateRoutes from "./routes/private";
 import { PublicRoutesConstants } from "./routes/public/constants";
@@ -12,7 +13,9 @@ function App() {
         <Route path={PublicRoutesConstants.SIGNIN} element={<Signin />} />
         <Route path={PublicRoutesConstants.SIGNUP} element={<Signup />} />
       </Routes>
-      <PrivateRoutes />
+      <Layout>
+        <PrivateRoutes />
+      </Layout>
     </BrowserRouter>
   );
 }

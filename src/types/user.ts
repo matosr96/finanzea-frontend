@@ -28,3 +28,8 @@ export interface UserInfo{
 
 export type PartialUser = Partial<User>;
 export const UserKey = "user";
+
+export interface SigninProps {
+  email: string;
+  password: string;
+}

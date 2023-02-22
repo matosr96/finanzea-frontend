@@ -8,12 +8,14 @@
 
 :root {
   --black: #3a3a3a;
-  --white-main: #ecf2ff;
+  --white-main: #f2f2f2;
   --white-total: #fff;
   --yellow: #f8f87d;
   --blue: #007bff;
   --purple: #c6a8d0;
   --main-color: #0069d9;
+  --blue-main: #1b2536;
+  --header-item-selected: #373f51;
 
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
@@ -28,6 +30,7 @@
   --tran-03: all 0.3s ease;
   --tran-04: all 0.3s ease;
   --tran-05: all 0.3s ease;
+  --tran-06: all 0.8s ease;
 }
 
 html {
@@ -45,7 +48,8 @@ body {
   font-family: "Poppins", sans-serif;
   text-rendering: optimizeSpeed;
   min-height: 100vh;
-  background-color: var(--white-main);
+  background: linear-gradient(to bottom, #1b2536 0%, #1b2536 33.33%, #f2f2f2 33.33%, #f2f2f2 100%);
+
   transition: var(--tran-05);
 }
 

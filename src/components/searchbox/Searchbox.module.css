@@ -3,13 +3,14 @@
   color: var(--black);
   display: flex;
   z-index: 3;
-  height: 4rem;
-  background: var(--white-total);
+  height: 5rem;
+  background: var(--header-item-selected);
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: none;
-  border-radius: .4rem;
+  border-radius: 2rem;
   width: auto;
   max-width: 224px;
+  
 }
 
 .searchbar:hover {

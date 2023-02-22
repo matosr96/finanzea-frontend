@@ -4,9 +4,9 @@ import styles from "./Welcome.module.css"
 
 const Welcome = () => {
   return (
-    <Navigation>
+
     <div>index</div>
-    </Navigation>
+
   )
 }
 

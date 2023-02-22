@@ -1,4 +1,4 @@
-import { EmptyUserState, PartialUser } from "../../../types/user";
+import { EmptyUserState, PartialUser, SigninProps } from "../../../types/user";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   logoutAdminThunks,
@@ -6,10 +6,7 @@ import {
   signupUserThunks,
 } from "./thunks";
 
-interface SigninProps {
-  email: string;
-  password: string;
-}
+
 
 const initialState = {
   user: localStorage.getItem("user")
@@ -23,9 +20,9 @@ const initialState = {
 
 export const signinUser = createAsyncThunk(
   "/signin",
-  async (admin: SigninProps, thunkAPI) => {
+  async (user: SigninProps, thunkAPI) => {
     try {
-      return await signinUserThunks(admin.email, admin.password);
+      return await signinUserThunks(user.email, user.password);
     } catch (err: any) {
       const message = err;
       return thunkAPI.rejectWithValue(message.response.data.message);
