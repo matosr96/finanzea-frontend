@@ -1,0 +1,10 @@
+.container_dashboard {
+  padding-top: 2rem;
+}
+
+.welcome_message {
+  color: var(--white-main);
+  font-weight: 400;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
