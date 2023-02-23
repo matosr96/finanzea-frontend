@@ -91,6 +91,8 @@ const Signup = () => {
                 type="password"
                 name="password"
                 id="password"
+                value={user.password}
+                onChange={handleChange}
                 className={styles.input}
                 required
               />

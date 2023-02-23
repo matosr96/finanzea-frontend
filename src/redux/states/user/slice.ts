@@ -6,8 +6,6 @@ import {
   signupUserThunks,
 } from "./thunks";
 
-
-
 const initialState = {
   user: localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user") as string)
@@ -20,11 +18,12 @@ const initialState = {
 
 export const signinUser = createAsyncThunk(
   "/signin",
-  async (user: SigninProps, thunkAPI) => {
+  async ({ email, password }: SigninProps, thunkAPI) => {
     try {
-      return await signinUserThunks(user.email, user.password);
+      return await signinUserThunks(email, password);
     } catch (err: any) {
       const message = err;
+      console.log(message)
       return thunkAPI.rejectWithValue(message.response.data.message);
     }
   }

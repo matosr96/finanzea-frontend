@@ -16,6 +16,7 @@
   --main-color: #0069d9;
   --blue-main: #1b2536;
   --header-item-selected: #373f51;
+  --buttons-card: #5a72cb;
 
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
@@ -51,8 +52,8 @@ body {
   background: linear-gradient(
     to bottom,
     #1b2536 0%,
-    #1b2536 40%,
-    #f2f2f2 33.33%,
+    #1b2536 28rem,
+    #f2f2f2 0%,
     #f2f2f2 100%
   );
 
@@ -61,4 +62,10 @@ body {
 
 button {
   cursor: pointer;
+}
+
+
+
+.wrapper {
+  border: 3px solid blue;
 }

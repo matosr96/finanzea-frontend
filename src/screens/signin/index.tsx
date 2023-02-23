@@ -6,6 +6,7 @@ import { PartialUser, SigninProps } from "../../types/user";
 import { useDispatch, useSelector } from "react-redux";
 import { signinUser } from "../../redux/states/user/slice";
 import { AppStore } from "../../redux/store";
+import swal from "sweetalert";
 
 const Signin = () => {
   const dispatch = useDispatch();
@@ -29,10 +30,14 @@ const Signin = () => {
     e.preventDefault();
     try {
       dispatch(signinUser(user) as any);
-    } catch (error) {
-      if (error instanceof Error) {
-        console.log(error);
-      }
+    } catch (err: any) {
+      const { message } = err.response.data;
+      console.log("ES ESTE", message);
+      swal("Usuario o contraseña incorrectos", {
+        icon: "warning",
+        buttons: ["OK!"],
+        dangerMode: true,
+      });
     }
   };
 
@@ -56,6 +61,8 @@ const Signin = () => {
                 type="email"
                 name="email"
                 id="email"
+                value={user.email}
+                onChange={handleChange}
                 className={styles.input}
                 required
               />
@@ -66,6 +73,8 @@ const Signin = () => {
                 type="password"
                 name="password"
                 id="password"
+                value={user.password}
+                onChange={handleChange}
                 className={styles.input}
                 required
               />

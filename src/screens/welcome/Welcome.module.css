@@ -1,10 +1,119 @@
 .container_dashboard {
-  padding-top: 2rem;
+  margin-top: 4rem;
 }
 
 .welcome_message {
   color: var(--white-main);
   font-weight: 400;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sections_dashboard {
+  display: grid;
+  grid-template-columns: 32rem 3fr;
+  margin-top: 2rem;
+}
+
+.section_one {
+  display: flex;
+  flex-direction: column;
+}
+
+.section_one .one_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.section_two {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 20rem;
+}
+
+.sect_card {
+  height: 10rem;
+}
+
+.content_card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  height: 10rem;
+  width: 26rem;
+}
+
+.content_card span {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 1.4rem;
+}
+
+.btn_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn_content button {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  width: 12rem;
+  background-color: var(--buttons-card);
+  color: var(--white-main);
+}
+
+.two_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25rem;
+  background-color: aqua;
+}
+
+.card_plans {
+ height: 40%rem;
+ 
+}
+
+.savings_card {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+  width: 26rem;
+  margin-top: 2rem;
+}
+
+.header_saving {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.image_saving {
+  background-color: var(--white-main);
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.image_saving img {
+  height: 4rem;
+  width: 4rem;
+}
+
+.info_header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info_header span {
+  font-size: 1.2rem;
+  text-transform: capitalize;
 }
