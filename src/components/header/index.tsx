@@ -45,13 +45,13 @@ const Header = () => {
             Dashboard
           </Link>
           <Link
-            to={"/welcome"}
+            to={"/savings"}
             className={`${styles.link} ${
-              activeLink === "transactions" ? styles.active : ""
+              activeLink === "Ahorro" ? styles.active : ""
             }`}
-            onClick={() => handleClick("transactions")}
+            onClick={() => handleClick("Ahorro")}
           >
-            Transacciones
+            Ahorro
           </Link>
           <Link
             to={"/welcome"}

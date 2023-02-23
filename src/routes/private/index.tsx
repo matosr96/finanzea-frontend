@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Categories from "../../screens/categories";
 import Expenses from "../../screens/expenses";
 import Welcome from "../../screens/welcome";
+import Savings from "../../screens/savings";
 import { PrivateConstantsRoutes } from "./constants";
-import CreateCategory from "../../screens/categories/create";
 
 const PrivateRoutes = () => {
   return (
@@ -13,10 +13,8 @@ const PrivateRoutes = () => {
         path={PrivateConstantsRoutes.CATEGORIES}
         element={<Categories />}
       />
-      <Route
-        path={PrivateConstantsRoutes.CREATE_CATEGORY}
-        element={<CreateCategory />}
-      />
+      <Route path={PrivateConstantsRoutes.SAVINGS} element={<Savings />} />
+      <Route path={PrivateConstantsRoutes.EXPENSES} element={<Expenses />} />
       <Route path={PrivateConstantsRoutes.EXPENSES} element={<Expenses />} />
     </Routes>
   );
