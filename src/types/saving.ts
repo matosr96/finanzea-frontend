@@ -7,6 +7,7 @@ export interface Saving {
   amount_saved: number;
   goal: number;
   goal_date: string;
+  percentage: number;
   status: string;
 }
 
@@ -18,6 +19,7 @@ export const EmptySavingsState: PartialSaving[] = [
     amount_saved: 0,
     goal: 0,
     goal_date: "",
+    percentage: 0,
     status: "",
   },
 ];
@@ -29,6 +31,7 @@ export const EmptySavingState: PartialSaving = {
   amount_saved: 0,
   goal: 0,
   goal_date: "",
+  percentage: 0,
   status: "",
 };
 

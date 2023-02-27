@@ -1,0 +1,129 @@
+.closeModal {
+  display: none;
+}
+
+.openModal {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 209;
+  overflow-y: scroll;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  background-color: var(--white-total);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  width: 30rem;
+}
+
+.scale_up_center {
+  animation: scale-up-center 0.4s;
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title_modal {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--bg-dark);
+}
+
+.modal_close {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  font-size: 3rem;
+}
+
+.form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.div_input {
+  background-color: var(--white-total);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 0.4rem;
+  width: 100%;
+}
+
+.div_input span {
+  font-size: 1.2rem;
+}
+
+.div_input input {
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  width: 100%;
+}
+
+.submit {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  color: var(--white-total);
+  background-color: var(--black);
+  width: 6rem;
+}
+
+.submit img{
+  height: 4rem;
+}
+
+.duo_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.div_input textarea {
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  width: 100%;
+  height: 100%;
+}
+
+.div_input select{
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+}

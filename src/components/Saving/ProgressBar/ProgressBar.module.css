@@ -1,0 +1,10 @@
+.progressBarText {
+  color: var(--white-main);
+  display: flex;
+  width: 100%;
+  width: 27rem;
+  height: 2rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  align-items: center;
+}

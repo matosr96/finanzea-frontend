@@ -30,6 +30,8 @@ const CreateCategory = (props: any) => {
     setCategory((prev) => ({ ...prev, [name]: value }));
   };
 
+  
+
   const submitCreateHandler = async (e: any) => {
     e.preventDefault();
     try {

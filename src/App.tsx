@@ -13,9 +13,9 @@ function App() {
         <Route path={PublicRoutesConstants.SIGNIN} element={<Signin />} />
         <Route path={PublicRoutesConstants.SIGNUP} element={<Signup />} />
       </Routes>
-      <Layout>
+     
         <PrivateRoutes />
-      </Layout>
+      
     </BrowserRouter>
   );
 }
