@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
+import styles from "./Google.module.css";
 
 const SigninGoogle = () => {
   const navigate = useNavigate();
@@ -26,16 +27,18 @@ const SigninGoogle = () => {
         clientId: clientID,
       });
     };
-  
+
     gapi.load("client:auth2", start);
   }, []);
   return (
-    <GoogleLogin
-      clientId={clientID}
-      onSuccess={onSuccess}
-      onFailure={onFailure}
-      cookiePolicy={"single_host_policy"}
-    />
+    <div className={styles.google}>
+      <GoogleLogin
+        clientId={clientID}
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={"single_host_policy"}
+      />
+    </div>
   );
 };
 
