@@ -58,6 +58,7 @@ const CreateSaving = (props: Props) => {
         <div className={styles.modal_header}>
           <h2 className={styles.title_modal}>Nuevo Ahorro</h2>
           <button
+            aria-label="close"
             className={styles.modal_close}
             onClick={() => setOpenModal(false)}
           >
