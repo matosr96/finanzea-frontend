@@ -136,9 +136,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 32rem;
+  height: 100%;
   overflow: hidden;
   width: 100%;
+}
+
+.data_expenses img{
+  height: 100%;
+}
+
+.data_expenses p{
+  margin-top: 1rem;
+  text-align: justify;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
 
 .incomes h2 {
@@ -193,6 +204,12 @@
 .table_expenses {
   text-align: center;
   width: 100%;
+  height: 100%;
+}
+
+.table_expenses img{
+  height: 14rem;
+  padding-top: 2rem;
 }
 
 .table_expenses table {

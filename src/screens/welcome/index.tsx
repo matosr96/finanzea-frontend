@@ -105,34 +105,60 @@ const Welcome = () => {
                 </div>
               </CardDashboard>
               <CardDashboard>
-                <div className={styles.data_expenses}>
-                  <span>Limite de gastos</span>
-                  <PieChart data={data} options={options} />
+                <div className={styles.table_expenses}>
+                  <h3>Lista de gastos</h3>
+                  <img src="./dashboard/gastos.svg" />
+                  <table className={styles.table}>
+                    <thead className={styles.thead}>
+                      <tr>
+                        <th>Titulo</th>
+                        <th>Gastado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {expenseList?.map((expense: Expense) => (
+                        <tr key={expense.uuid}>
+                          <td>{expense.title}</td>
+
+                          <td>{expense.amount}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </CardDashboard>
             </div>
           </div>
           <div className={styles.section_three}>
             <CardDashboard>
-              <div className={styles.table_expenses}>
-                <h3>Lista de gastos</h3>
-                <table className={styles.table}>
-                  <thead className={styles.thead}>
-                    <tr>
-                      <th>Titulo</th>
-                      <th>Gastado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {expenseList?.map((expense: Expense) => (
-                      <tr key={expense.uuid}>
-                        <td>{expense.title}</td>
-
-                        <td>{expense.amount}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className={styles.data_expenses}>
+                <h3>Consejos que pueden servirte</h3>
+                <img src="./dashboard/consejos.svg" />
+                <div>
+                  <h4>1. Haz un presupuesto:</h4>
+                  <p>
+                    Crea un presupuesto mensual para saber exactamente cuánto
+                    dinero entra y sale de tu cuenta bancaria. Anota tus
+                    ingresos y gastos fijos, como el alquiler, la comida, la
+                    electricidad y el gas. Luego, identifica los gastos
+                    discrecionales, como salir a cenar o ir al cine, y trata de
+                    reducirlos.
+                  </p>
+                  <h4>2. Sé paciente y disciplinado</h4>
+                  <p>
+                    Ahorrar dinero puede llevar tiempo y esfuerzo. Pero si te
+                    mantienes disciplinado y paciente, puedes alcanzar tus
+                    objetivos financieros a largo plazo.
+                  </p>
+                  <h4>3. Compara precios antes de comprar</h4>
+                  <p>
+                    Siempre compara precios
+                    antes de hacer una compra importante. Puedes usar
+                    aplicaciones o sitios web para comparar precios de productos
+                    similares. Esto te ayudará a encontrar la mejor oferta y
+                    ahorrar dinero.
+                  </p>
+                </div>
               </div>
             </CardDashboard>
           </div>
